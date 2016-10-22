@@ -613,38 +613,38 @@
       ser reusadas. Além de todos os recursos que JSON fornece, JSON-LD adiciona:</p>
 
     <ul>
-      <li>a universal identifier mechanism for <a class="tref internalDFN" title="json-object"
-          href="#dfn-json-object">JSON objects</a> via the use of <a class="tref internalDFN"
+      <li>um mecanismo identificador universal para <a class="tref internalDFN" title="json-object"
+          href="#dfn-json-object">objetos JSON</a> através do uso de <a class="tref internalDFN"
           title="iri" href="#dfn-iri">IRIs</a>,</li>
-      <li>a way to disambiguate keys shared among different JSON documents by mapping
-        them to <a class="tref internalDFN" title="iri" href="#dfn-iri">IRIs</a>   via a <a class="tref internalDFN" title="context" href="#dfn-context">context</a>,</li>
-      <li>a mechanism in which a value in a <a class="tref internalDFN" title="json-object"
-          href="#dfn-json-object">JSON object</a> may refer to a <a class="tref internalDFN"
-          title="json-object" href="#dfn-json-object">JSON object</a> on a different
-        site on the Web,</li>
-      <li>the ability to annotate <a class="tref internalDFN" title="string" href="#dfn-string">strings</a>   with their language,</li>
-      <li>a way to associate datatypes with values such as dates and times,</li>
-      <li>and a facility to express one or more directed graphs, such as a social network,
-        in a single document.</li>
+      <li>uma maneira para diferenciar chaves compartilhadas entre diferentes documentos JSON ao mapea-las a
+        <a class="tref internalDFN" title="iri" href="#dfn-iri">IRIs</a>   via <a class="tref internalDFN" title="context" href="#dfn-context">context</a>,</li>
+      <li>um mecanismo em que um valor de um <a class="tref internalDFN" title="json-object"
+          href="#dfn-json-object">objeto JSON</a> pode referir-se a um <a class="tref internalDFN"
+          title="json-object" href="#dfn-json-object">objeto JSON</a> em um diferente
+        site na Web,</li>
+      <li>uma maneira de associar <a class="tref internalDFN" title="string" href="#dfn-string">strings</a>   com sua língua,</li>
+      <li>uma maneira de associar os tipos de dados com valores como datas e horas,</li>
+      <li>e uma maneira fácil de espressar um ou mais grafos direcionados, tais como rede social,
+        em um único documento.</li>
     </ul>
 
     <p>
-      JSON-LD is designed to be usable directly as JSON, with no knowledge of RDF [
+      JSON-LD é projetado para ser usado diretamente como JSON, sem nenhum conhecimento de RDF [
       <cite><a class="bibref" href="#bib-RDF11-CONCEPTS">RDF11-CONCEPTS</a></cite>].
-      It is also designed to be usable as RDF, if desired, for use with other Linked
-      Data technologies like SPARQL. Developers who require any of the facilities
-      listed above or need to serialize an RDF Graph or RDF Dataset in a JSON-based
-      syntax will find JSON-LD of interest. People intending to use JSON-LD with
-      RDF tools will find it can be used as another RDF syntax, like Turtle [<cite><a class="bibref" href="#bib-TURTLE">TURTLE</a></cite>].
-      Complete details of how JSON-LD relates to RDF are in section <a href="#relationship-to-rdf"
-        class="sec-ref"><span class="secno">9.</span> <span class="sec-title">Relationship to RDF</span></a>.
+      Ele também é projetado para ser usado como RDF, se desejado, para uso com outras tecnologias de Dados Linkados
+      como SPARQL. Desenvolvedores que exigem qualquer uma destas facilidades
+      listadas acima ou precisam serializar dados de um Grafo RDF ou um Conjunto de Dados RDF em uma sintaxe baseada em JSON
+      vão achar JSON-LD interessante. Pessoas que pretendem usar JSON-LD com
+      ferramentas RDF vão perceber que pode ser listado como outra sintaxe RDF, como Turtle [<cite><a class="bibref" href="#bib-TURTLE">TURTLE</a></cite>].
+      Detalhes completos de como JSON-LD se relaciona com RDF estão na seção <a href="#relationship-to-rdf"
+        class="sec-ref"><span class="secno">9.</span> <span class="sec-title">Relacionamento com RDF</span></a>.
     </p>
 
     <p>
-      The syntax is designed to not disturb already deployed systems running on JSON, but
-      provide a smooth upgrade path from JSON to JSON-LD. Since the shape of such
-      data varies wildly, JSON-LD features mechanisms to reshape documents into a
-      deterministic structure which simplifies their processing.</p>
+      A sintaxe é projetada para não perturbar sistemas em produção que já usem JSON, mas
+      fornece um caminho de atualização suave do JSON para o JSON-LD. Como a forma
+      dos dados varias extremamente, JSON-LD apresenta mecanimso para reformatar documentos em uma
+      estrutura determinística que simplifica seu processamento.</p>
 
     <section class="informative" id="how-to-read-this-document">
       <h3 aria-level="2" role="heading" id="h3_how-to-read-this-document"><span class="secno">1.1 </span>Como Ler este Documento</h3>
