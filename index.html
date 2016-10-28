@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" typeof="bibo:Document w3p:REC" about="" property="dcterms:language"
-  content="en">
+<html lang="pt" dir="ltr" typeof="bibo:Document w3p:REC" about="" property="dcterms:language"
+  content="pt">
 
 <head>
   <title>JSON-LD 1.0</title>
@@ -261,6 +261,24 @@
       background: #e9fbe9;
     }
   </style>
+
+  <style>
+  /* Translation node */
+  .alert-rc, .alert-wd {
+    background-color: #fafaae;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 1em auto;
+    border: 2px black dashed;
+  }
+  .alert-wd {
+    border: 5px red dashed;
+  }
+  .alert-rc > .alert-rc-tt, .alert-wd > .alert-wd-tt {
+    font-size: 2em;
+  }
+  </style>
+
   <link rel="stylesheet" href="style.css">
   <!--[if lt IE 9]><script src='https://www.w3.org/2008/site/js/html5shiv.js'></script><![endif]-->
   <!--[if lt IE 9]><script src='https://www.w3.org/2008/site/js/html5shiv.js'></script><![endif]-->
@@ -268,27 +286,41 @@
 
 <body class="h-entry" role="document" id="respecDocument">
   <div class="head" role="contentinfo" id="respecHeader">
+    <div class="alert-wd">
+      <p class="alert-wd-tt">Rascunho de trabalho de tradução</p>
+      Documento em processo de tradução pela <a href="http://www.webiwg.org/">WebIWG</a>. Original em
+      <a href="https://www.w3.org/TR/json-ld/">A JSON-based Serialization for Linked Data</a>
+      </p>
+      <p>
+      Veja a <a href="https://github.com/webiwg/w3c-tr-json-ld/issues">discussão desta tradução no Github</a>.
+      </p>
+      <p>
+        Veja <a href="http://services.w3.org/htmldiff?doc1=https%3A%2F%2Fwww.w3.org%2FTR%2Fjson-ld%2F&doc2=http%3A%2F%2Fjson-ld.pt.webiwg.org%2F">diferença entre o original e esta tradução</a>,
+        possivelmente útil para revisão.
+      </p>
+    </div>
+
     <p>
       <a href="http://www.w3.org/"><img width="72" height="48" src="w3c_home.png" alt="W3C"></a>
     </p>
     <h1 class="title p-name" id="title" property="dcterms:title">JSON-LD 1.0</h1>
 
-    <h2 property="bibo:subtitle" id="subtitle">A JSON-based Serialization for Linked Data</h2>
+    <h2 property="bibo:subtitle" id="subtitle">Um formato baseado em JSON para serializar Dados Linkados</h2>
 
     <h2 property="dcterms:issued" datatype="xsd:dateTime" content="2014-01-15T23:00:00.000Z"
-      id="w3c-recommendation-16-january-2014"><abbr title="World Wide Web Consortium">W3C</abbr> Recommendation <time class="dt-published"
-        datetime="2014-01-16">16 January 2014</time></h2>
+      id="w3c-recommendation-16-january-2014">Recomendação da <abbr title="World Wide Web Consortium">W3C</abbr> em <time class="dt-published"
+        datetime="2014-01-16">16 de janeiro de 2014</time></h2>
     <dl>
 
-      <dt>This version:</dt>
+      <dt>Esta versão:</dt>
       <dd><a class="u-url" href="http://www.w3.org/TR/2014/REC-json-ld-20140116/">http://www.w3.org/TR/2014/REC-json-ld-20140116/</a></dd>
-      <dt>Latest published version:</dt>
+      <dt>Última versão publicada:</dt>
       <dd><a href="http://www.w3.org/TR/json-ld/">http://www.w3.org/TR/json-ld/</a></dd>
 
-      <dt>Previous version:</dt>
+      <dt>Versão anterior:</dt>
       <dd><a rel="dcterms:replaces" href="http://www.w3.org/TR/2013/PR-json-ld-20131105/">http://www.w3.org/TR/2013/PR-json-ld-20131105/</a></dd>
 
-      <dt>Editors:</dt>
+      <dt>Editores:</dt>
       <dd class="p-author h-card vcard" rel="bibo:editor" inlist=""><span typeof="foaf:Person"><a class="u-url url p-name fn" rel="foaf:homepage" property="foaf:name" content="Manu Sporny" href="http://manu.sporny.org/">Manu Sporny</a>, <a rel="foaf:workplaceHomepage" class="p-org org h-org h-card" href="http://digitalbazaar.com/">Digital Bazaar</a></span>
       </dd>
       <dd class="p-author h-card vcard" rel="bibo:editor" inlist=""><span typeof="foaf:Person"><a class="u-url url p-name fn" rel="foaf:homepage" property="foaf:name" content="Gregg Kellogg" href="http://greggkellogg.net/">Gregg Kellogg</a>, <a rel="foaf:workplaceHomepage" class="p-org org h-org h-card" href="http://kellogg-assoc.com/">Kellogg Associates</a></span>
@@ -296,7 +328,7 @@
       <dd class="p-author h-card vcard" rel="bibo:editor" inlist=""><span typeof="foaf:Person"><a class="u-url url p-name fn" rel="foaf:homepage" property="foaf:name" content="Markus Lanthaler" href="http://www.markus-lanthaler.com/">Markus Lanthaler</a>, <a rel="foaf:workplaceHomepage" class="p-org org h-org h-card" href="http://www.tugraz.at/">Graz University of Technology</a></span>
       </dd>
 
-      <dt>Authors:</dt>
+      <dt>Autores:</dt>
       <dd class="p-author h-card vcard" rel="dcterms:contributor"><span typeof="foaf:Person"><a class="u-url url p-name fn" rel="foaf:homepage" property="foaf:name" content="Manu Sporny" href="http://digitalbazaar.com/">Manu Sporny</a>, <a rel="foaf:workplaceHomepage" class="p-org org h-org h-card" href="http://digitalbazaar.com/">Digital Bazaar</a></span>
       </dd>
       <dd class="p-author h-card vcard" rel="dcterms:contributor"><span typeof="foaf:Person"><a class="u-url url p-name fn" rel="foaf:homepage" property="foaf:name" content="Dave Longley" href="http://digitalbazaar.com/">Dave Longley</a>, <a rel="foaf:workplaceHomepage" class="p-org org h-org h-card" href="http://digitalbazaar.com/">Digital Bazaar</a></span>
@@ -311,19 +343,19 @@
     </dl>
 
     <p>
-      Please refer to the <a href="http://www.w3.org/2014/json-ld-errata"><strong>errata</strong></a> for this document,
-      which may include some normative corrections.
+      Por favor consulte a <a href="http://www.w3.org/2014/json-ld-errata"><strong>errata</strong></a> deste documento
+      que pode incluir algumas correções normativas.
     </p>
 
     <p>
-      This document is also available in this non-normative format:
-      <a rel="alternate" href="diff-20131105.html">diff to previous version</a>
+      Este documento também está disponível neste formato não-normativa:
+      <a rel="alternate" href="https://www.w3.org/TR/json-ld/diff-20131105.html">diferenças quanto a versão anterior</a>
     </p>
 
     <p>
-      The English version of this specification is the only normative version. Non-normative
-      <a href="http://www.w3.org/Consortium/Translation/">translations</a> may also
-      be available.
+      A versão em inglês desta especificação é a versão única normativa.
+      <a href="http://www.w3.org/Consortium/Translation/">Traduções</a> não-normativas podem
+      estar disponíveis.
     </p>
 
     <p class="copyright">
@@ -332,82 +364,105 @@
       <a href="http://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>,
       <a href="http://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>,
       <a href="http://www.keio.ac.jp/">Keio</a>, <a href="http://ev.buaa.edu.cn/">Beihang</a>),
-      All Rights Reserved.
-      <abbr title="World Wide Web Consortium">W3C</abbr> <a href="http://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>,
-      <a href="http://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and
-      <a href="http://www.w3.org/Consortium/Legal/copyright-documents">document use</a> rules apply.
+      Todos os direitos reservados.
+      Aplicam-se as regras de
+      <a href="http://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">responsabilidade</a>,
+      <a href="http://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">marca registrada</a> e
+      <a href="http://www.w3.org/Consortium/Legal/copyright-documents"> uso do documento</a>
+      da <abbr title="World Wide Web Consortium">W3C</abbr>.
     </p>
 
     <hr>
   </div>
+
+  <!--
+    N.T. Vou assumir "Linked Data" como "Dados Linkados". Isso requer mais pesquisa (fititnt, 2016-10-21 08:22)
+    N.T. É importante que traduções de "Linked Data" usem primeira letra maiúscula (fititnt, 2016-10-21 08:26)
+  -->
+
   <section id="abstract" class="introductory" property="dcterms:abstract" datatype="" typeof="bibo:Chapter" resource="#abstract" rel="bibo:chapter">
-    <h2 aria-level="1" role="heading" id="h2_abstract">Abstract</h2>
-    <p>JSON is a useful data serialization and messaging format.
-      This specification defines JSON-LD, a JSON-based format to serialize Linked Data.
-      The syntax is designed to easily integrate into deployed systems that already use JSON,
-      and provides a smooth upgrade path from JSON to JSON-LD.
-      It is primarily intended to be a way to use Linked Data in Web-based programming environments,
-      to build interoperable Web services, and to store Linked Data in JSON-based storage engines.
+    <h2 aria-level="1" role="heading" id="h2_abstract">Resumo</h2>
+    <p>JSON é um formato de mensagens e serialização de dados úteis.
+      Essa especificação define JSON-LD, um formato baseado em JSON para serializar Dados Linkados.
+      A sintaxe é projetada para integrar facilmente em sistemas implantados que já usam JSON,
+      e fornece um caminho de atualização suave do JSON para JSON-LD.
+      Destina-se principalmente para ser uma maneira de usar Dados Linkados em ambientes de programação baseada na Web,
+      para construir serviços Web interoperáveis e para armazenar Dados Linkados em mecanismos de armazenamento baseados em JSON.
     </p>
   </section>
   <section id="sotd" class="introductory" typeof="bibo:Chapter" resource="#sotd" rel="bibo:chapter">
-    <h2 aria-level="1" role="heading" id="h2_sotd">Status of This Document</h2>
+    <h2 aria-level="1" role="heading" id="h2_sotd">Situação Deste Documento</h2>
 
     <p>
-      <em>This section describes the status of this document at the time of its publication.
-          Other documents may supersede this document.
-          A list of current <abbr title="World Wide Web Consortium">W3C</abbr> publications and the latest revision
-          of this technical report can be found in the <a href="http://www.w3.org/TR/"><abbr title="World Wide Web Consortium">W3C</abbr> technical reports index</a> at http://www.w3.org/TR/.</em>
+      <em>Esta seção descreve a situação deste documento no momento da sua publicação.
+          Outros documentos podem substituir este documento.
+          A lista das atuais publicações da <abbr title="World Wide Web Consortium">W3C</abbr> e a última revisão
+          deste relatório técnico pode ser encontrado no <a href="http://www.w3.org/TR/">índice de relatórios técnicos da <abbr title="World Wide Web Consortium">W3C</abbr> </a> em http://www.w3.org/TR/.</em>
     </p>
 
-    <p>This document has been reviewed by <abbr title="World Wide Web Consortium">W3C</abbr> Members, by software developers, and by other <abbr title="World Wide Web Consortium">W3C</abbr> groups and interested parties,
-    and is endorsed by the Director as a <abbr title="World Wide Web Consortium">W3C</abbr> Recommendation. It is a stable document and may be used as reference material r cited from another document.
-    <abbr title="World Wide Web Consortium">W3C</abbr>'s
-      role in making the Recommendation is to draw attention to the specification
-      and to promote its widespread deployment. This enhances the functionality and
-      interoperability of the Web.</p>
+    <p>Este documento foi revisado por membros do <abbr title="World Wide Web Consortium">W3C</abbr>, por desenvolvedores de software, e por outros grupos da <abbr title="World Wide Web Consortium">W3C</abbr> e partes interessadas,
+      e é endossado pelo Diretor como uma Recomendação da <abbr title="World Wide Web Consortium">W3C</abbr>. É um documento estável e pode ser usado como material de referência ou citado em outro documento.
+      Papel do <abbr title="World Wide Web Consortium">W3C</abbr>
+      em fazer a recomendação é para chamar a atenção para a especificação
+      e promover sua implantação generalizada. Isto melhora a funcionalidade e a
+      interoperabilidade da Web.</p>
 
-    <p>This specification has been developed by the JSON for Linking Data Community Group before it has been transferred to the RDF Working Group for review, improvement,
-      and publication along the Recommendation track.
-      The document contains small editorial changes arising from comments received during the Proposed Recommendation review;
-      see the
-      <a href="diff-20131105.html">diff-marked version</a> for details.</p>
+    <!--
+      N.T.: Não tenho certeza da tradução "the Recommendation track" ser "na trilha de Recomendação".
+            E não consigo encontrar referências na internet sobre isso neste momento (fititnt, 2016-10-22 02:57)
+    -->
 
-    <p>There are several independent interoperable implementations of this specification.
-      An
-      <a href="https://dvcs.w3.org/hg/json-ld/raw-file/default/test-suite/reports/cr-20131022.html">implementation report</a> as of October&nbsp;2013 is available.</p>
+    <p>Esta especificação foi desenvolvida pelo <em lang="en">JSON for Linking Data Community Group</em> antes de ser transferida para o <em lang="en">RDF Working Group</em> para revisão, melhoria
+      e publicação na trilha de Recomendação.
+      O documento contém pequenas alterações de redação, decorrentes de comentários recebidos durante a revisão da Proposta de Recomendação;
+      Veja a
+      <a href="https://www.w3.org/TR/json-ld/diff-20131105.html">versão com diferenças marcadas</a> para mais detalhes.</p>
+
+    <p>Existem várias implementações interoperacionais independentes desta especificação.
+      Um
+      <a href="https://dvcs.w3.org/hg/json-ld/raw-file/default/test-suite/reports/cr-20131022.html">relatório de implementações</a> em Outubro de 2013 está disponível.</p>
 
     <p>
-      This document was published by the <a href="http://www.w3.org/2011/rdf-wg/">RDF Working Group</a> as a Recommendation. If you wish to make comments regarding this document,
-      please send them to
+      Este documento foi publicado pelo <a href="http://www.w3.org/2011/rdf-wg/" lang="en">RDF Working Group</a> como uma Recomendação. Se você deseja fazer comentários sobre este documento,
+      por favor os envie para
       <a href="mailto:public-rdf-comments@w3.org">public-rdf-comments@w3.org</a> (
-      <a href="mailto:public-rdf-comments-request@w3.org?subject=subscribe">subscribe</a>,
-      <a href="http://lists.w3.org/Archives/Public/public-rdf-comments/">archives</a>).
-      All comments are welcome.</p>
+      <a href="mailto:public-rdf-comments-request@w3.org?subject=subscribe">inscrever-se</a>,
+      <a href="http://lists.w3.org/Archives/Public/public-rdf-comments/">arquivos</a>).
+      Todos os comentários são bem vindos.</p>
 
     <p>
 
-      This document was produced by a group operating under the
+      Este documento foi produzido por um grupo que opera sob a
 
-      <a id="sotd_patent" about="" rel="w3p:patentRules" href="http://www.w3.org/Consortium/Patent-Policy-20040205/">5 February 2004 <abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
+      <a id="sotd_patent" about="" rel="w3p:patentRules" href="http://www.w3.org/Consortium/Patent-Policy-20040205/">Política de Patentes da <abbr title="World Wide Web Consortium">W3C</abbr> de fevereiro de 2004</a>.
 
-      <abbr title="World Wide Web Consortium">W3C</abbr> maintains a <a href="http://www.w3.org/2004/01/pp-impl/46168/status"
-        rel="disclosure">public list of any patent disclosures</a> made in connection
-      with the deliverables of the group; that page also includes instructions for
-      disclosing a patent. An individual who has actual knowledge of a patent which
-      the individual believes contains
-      <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/#def-essential">Essential Claim(s)</a> must disclose the information in accordance with <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/#sec-Disclosure">section
-            6 of the <abbr title="World Wide Web Consortium">W3C</abbr> Patent Policy</a>.
+      <abbr title="World Wide Web Consortium">W3C</abbr> mantém uma <a href="http://www.w3.org/2004/01/pp-impl/46168/status"
+        rel="disclosure">lista pública de divulgação de patentes</a> feita em conexão
+      com as entregas do grupo; essa página também inclui instruções para a
+      divulgação de uma patente.
+
+      <!--
+        N.T.: Estou usando como referência para esse paráfrafo, a mesma tradução que fiz em 
+              http://i18n-html-tech-lang.pt.webiwg.org/, porém parece que a palavra "Patente"
+              não é citada na outra fonte. O paragrafo de ambos devem ser especialmente
+              revisados.
+      -->
+
+      Uma pessoa que tenha conhecimento de uma patente que
+      esta pessoa acredita conter
+      <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/#def-essential">"Reivindicações essenciais"</a> deve divulgar as informações de acordo com a 
+      <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/#sec-Disclosure">seção
+            6 da Política de Patentes do <abbr title="World Wide Web Consortium">W3C</abbr></a>.
 
     </p>
 
   </section>
   <section id="toc">
-    <h2 class="introductory" aria-level="1" role="heading" id="h2_toc">Table of Contents</h2>
+    <h2 class="introductory" aria-level="1" role="heading" id="h2_toc">Índice de conteúdo</h2>
     <ul class="toc" role="directory" id="respecContents">
-      <li class="tocline"><a href="#introduction" class="tocxref"><span class="secno">1. </span>Introduction</a>
+      <li class="tocline"><a href="#introduction" class="tocxref"><span class="secno">1. </span>Introdução</a>
         <ul class="toc">
-          <li class="tocline"><a href="#how-to-read-this-document" class="tocxref"><span class="secno">1.1 </span>How to Read this Document</a></li>
+          <li class="tocline"><a href="#how-to-read-this-document" class="tocxref"><span class="secno">1.1 </span>Como Ler este Documento</a></li>
         </ul>
       </li>
       <li class="tocline"><a href="#design-goals-and-rationale" class="tocxref"><span class="secno">2. </span>Design Goals and Rationale</a></li>
@@ -543,95 +598,90 @@
 
   <section class="informative" id="introduction">
     <!--OddPage-->
-    <h2 aria-level="1" role="heading" id="h2_introduction"><span class="secno">1. </span>Introduction</h2>
-    <p><em>This section is non-normative.</em></p>
+    <h2 aria-level="1" role="heading" id="h2_introduction"><span class="secno">1. </span>Introdução</h2>
+    <p><em>Esta seção é não-normativa.</em></p>
 
-    <p>Linked Data [<cite><a class="bibref" href="#bib-LINKED-DATA">LINKED-DATA</a></cite>]
-      is a way to create a network of standards-based machine interpretable data
-      across different documents and Web sites. It allows an application to start
-      at one piece of Linked Data, and follow embedded links to other pieces of Linked
-      Data that are hosted on different sites across the Web.</p>
+    <p>Dados Linkados [<cite><a class="bibref" href="#bib-LINKED-DATA">LINKED-DATA</a></cite>]
+      é um modo de criar uma rede de dados baseado em padrões interpretáveis por máquinas
+      em diferentes documentos e sites da Web. Permite que um aplicativo inicie
+      em um pedaço de Dados Linkados e siga os links para outros pedaços de Dados
+      Linkados que estão hospedados em diferentes sites pela Web.</p>
 
-    <p>JSON-LD is a lightweight syntax to serialize Linked Data in JSON [<cite><a class="bibref" href="#bib-RFC4627">RFC4627</a></cite>].
-      Its design allows existing JSON to be interpreted as Linked Data with minimal
-      changes. JSON-LD is primarily intended to be a way to use Linked Data in Web-based
-      programming environments, to build interoperable Web services, and to store
-      Linked Data in JSON-based storage engines. Since JSON-LD is 100% compatible
-      with JSON, the large number of JSON parsers and libraries available today can
-      be reused. In addition to all the features JSON provides, JSON-LD introduces:</p>
+    <p>JSON-LD é uma sintaxe leve para serializar Dados Linkados em JSON [<cite><a class="bibref" href="#bib-RFC4627">RFC4627</a></cite>].
+
+      Seu design permite JSON existente ser interpretado como Dados Linkados com mínimas
+      alterações. JSON-LD é destinado principalmente para ser uma maneira de usar Dados Linkados
+      em ambientes de programação baseada na Web, para construir serviços Web interoperáveis, e para armazenar
+      Dados Linkados em mecanismo de armazenamento baseado em JSON. Como JSON-LD é 100% compatível
+      com JSON, a maior parte dos interpretadores JSON e bibliotecas disponiveis hoje podem
+      ser reusadas. Além de todos os recursos que JSON fornece, JSON-LD adiciona:</p>
 
     <ul>
-      <li>a universal identifier mechanism for <a class="tref internalDFN" title="json-object"
-          href="#dfn-json-object">JSON objects</a> via the use of <a class="tref internalDFN"
+      <li>um mecanismo identificador universal para <a class="tref internalDFN" title="json-object"
+          href="#dfn-json-object">objetos JSON</a> através do uso de <a class="tref internalDFN"
           title="iri" href="#dfn-iri">IRIs</a>,</li>
-      <li>a way to disambiguate keys shared among different JSON documents by mapping
-        them to <a class="tref internalDFN" title="iri" href="#dfn-iri">IRIs</a>   via a <a class="tref internalDFN" title="context" href="#dfn-context">context</a>,</li>
-      <li>a mechanism in which a value in a <a class="tref internalDFN" title="json-object"
-          href="#dfn-json-object">JSON object</a> may refer to a <a class="tref internalDFN"
-          title="json-object" href="#dfn-json-object">JSON object</a> on a different
-        site on the Web,</li>
-      <li>the ability to annotate <a class="tref internalDFN" title="string" href="#dfn-string">strings</a>   with their language,</li>
-      <li>a way to associate datatypes with values such as dates and times,</li>
-      <li>and a facility to express one or more directed graphs, such as a social network,
-        in a single document.</li>
+      <li>uma maneira para diferenciar chaves compartilhadas entre diferentes documentos JSON ao mapea-las a
+        <a class="tref internalDFN" title="iri" href="#dfn-iri">IRIs</a>   via <a class="tref internalDFN" title="context" href="#dfn-context">context</a>,</li>
+      <li>um mecanismo em que um valor de um <a class="tref internalDFN" title="json-object"
+          href="#dfn-json-object">objeto JSON</a> pode referir-se a um <a class="tref internalDFN"
+          title="json-object" href="#dfn-json-object">objeto JSON</a> em um diferente
+        site na Web,</li>
+      <li>uma maneira de associar <a class="tref internalDFN" title="string" href="#dfn-string">strings</a>   com sua língua,</li>
+      <li>uma maneira de associar os tipos de dados com valores como datas e horas,</li>
+      <li>e uma maneira fácil de espressar um ou mais grafos direcionados, tais como rede social,
+        em um único documento.</li>
     </ul>
 
     <p>
-      JSON-LD is designed to be usable directly as JSON, with no knowledge of RDF [
+      JSON-LD é projetado para ser usado diretamente como JSON, sem nenhum conhecimento de RDF [
       <cite><a class="bibref" href="#bib-RDF11-CONCEPTS">RDF11-CONCEPTS</a></cite>].
-      It is also designed to be usable as RDF, if desired, for use with other Linked
-      Data technologies like SPARQL. Developers who require any of the facilities
-      listed above or need to serialize an RDF Graph or RDF Dataset in a JSON-based
-      syntax will find JSON-LD of interest. People intending to use JSON-LD with
-      RDF tools will find it can be used as another RDF syntax, like Turtle [<cite><a class="bibref" href="#bib-TURTLE">TURTLE</a></cite>].
-      Complete details of how JSON-LD relates to RDF are in section <a href="#relationship-to-rdf"
-        class="sec-ref"><span class="secno">9.</span> <span class="sec-title">Relationship to RDF</span></a>.
+      Ele também é projetado para ser usado como RDF, se desejado, para uso com outras tecnologias de Dados Linkados
+      como SPARQL. Desenvolvedores que exigem qualquer uma destas facilidades
+      listadas acima ou precisam serializar dados de um Grafo RDF ou um Conjunto de Dados RDF em uma sintaxe baseada em JSON
+      vão achar JSON-LD interessante. Pessoas que pretendem usar JSON-LD com
+      ferramentas RDF vão perceber que pode ser listado como outra sintaxe RDF, como Turtle [<cite><a class="bibref" href="#bib-TURTLE">TURTLE</a></cite>].
+      Detalhes completos de como JSON-LD se relaciona com RDF estão na seção <a href="#relationship-to-rdf"
+        class="sec-ref"><span class="secno">9.</span> <span class="sec-title">Relacionamento com RDF</span></a>.
     </p>
 
     <p>
-      The syntax is designed to not disturb already deployed systems running on JSON, but
-      provide a smooth upgrade path from JSON to JSON-LD. Since the shape of such
-      data varies wildly, JSON-LD features mechanisms to reshape documents into a
-      deterministic structure which simplifies their processing.</p>
+      A sintaxe é projetada para não perturbar sistemas em produção que já usem JSON, mas
+      fornece um caminho de atualização suave do JSON para o JSON-LD. Como a forma
+      dos dados varias extremamente, JSON-LD apresenta mecanimso para reformatar documentos em uma
+      estrutura determinística que simplifica seu processamento.</p>
 
     <section class="informative" id="how-to-read-this-document">
-      <h3 aria-level="2" role="heading" id="h3_how-to-read-this-document"><span class="secno">1.1 </span>How to Read this Document</h3>
-      <p><em>This section is non-normative.</em></p>
+      <h3 aria-level="2" role="heading" id="h3_how-to-read-this-document"><span class="secno">1.1 </span>Como Ler este Documento</h3>
+      <p><em>Esta seção é não-normativa.</em></p>
 
       <p>This document is a detailed specification for a serialization of Linked Data
         in JSON. The document is primarily intended for the following audiences:</p>
 
       <ul>
-        <li>Software developers who want to encode Linked Data in a variety of programming
-          languages that can use JSON</li>
+        <li>Software developers who want to encode Linked Data in a variety of programming languages that can use JSON</li>
         <li>Software developers who want to convert existing JSON to JSON-LD</li>
-        <li>Software developers who want to understand the design decisions and language
-          syntax for JSON-LD</li>
-        <li>Software developers who want to implement processors and APIs for JSON-LD
-        </li>
-        <li>Software developers who want to generate or consume Linked Data, an RDF graph,
-          or an RDF Dataset in a JSON syntax</li>
+        <li>Software developers who want to understand the design decisions and language syntax for JSON-LD</li>
+        <li>Software developers who want to implement processors and APIs for JSON-LD</li>
+        <li>Software developers who want to generate or consume Linked Data, an RDF graph, or an RDF Dataset in a JSON syntax</li>
       </ul>
 
       <p>A companion document, the JSON-LD Processing Algorithms and API specification
         [
         <cite><a class="bibref" href="#bib-JSON-LD-API">JSON-LD-API</a></cite>],
-        specifies how to work with JSON-LD at a higher level by providing a standard
-        library interface for common JSON-LD operations.</p>
+        specifies how to work with JSON-LD at a higher level by providing a standard library interface for common JSON-LD operations.
+      </p>
 
-      <p>To understand the basics in this specification you must first be familiar with
-        JSON, which is detailed in [<cite><a class="bibref" href="#bib-RFC4627">RFC4627</a></cite>].</p>
+      <p>To understand the basics in this specification you must first be familiar with JSON,
+        which is detailed in [<cite><a class="bibref" href="#bib-RFC4627">RFC4627</a></cite>].</p>
 
       <p>This document almost exclusively uses the term <abbr title="Internationalized Resource Identifier">IRI</abbr>   (
         <a href="http://www.w3.org/TR/ld-glossary/#internationalized-resource-identifier">Internationalized Resource Indicator</a>)
         when discussing hyperlinks. Many Web developers are more familiar with the
         URL (<a href="http://www.w3.org/TR/ld-glossary/#uniform-resource-locator">Uniform Resource Locator</a>)
         terminology. The document also uses, albeit rarely, the URI (
-        <a href="http://www.w3.org/TR/ld-glossary/#uniform-resource-identifier">Uniform Resource Indicator</a>)
-        terminology. While these terms are often used interchangeably among technical
-        communities, they do have important distinctions from one another and the
-        specification goes to great lengths to try and use the proper terminology
-        at all times.
+        <a href="http://www.w3.org/TR/ld-glossary/#uniform-resource-identifier">Uniform Resource Indicator</a>) terminology.
+        While these terms are often used interchangeably among technical communities,
+        they do have important distinctions from one another and the specification goes to great lengths to try and use the proper terminology at all times.
       </p>
     </section>
   </section>
@@ -639,45 +689,44 @@
   <section class="informative" id="design-goals-and-rationale">
     <!--OddPage-->
     <h2 aria-level="1" role="heading" id="h2_design-goals-and-rationale"><span class="secno">2. </span>Design Goals and Rationale</h2>
-    <p><em>This section is non-normative.</em></p>
+    <p><em>Esta seção é não-normativa.</em></p>
 
     <p>JSON-LD satisfies the following design goals:</p>
 
     <dl>
       <dt>Simplicity</dt>
-      <dd>No extra processors or software libraries are necessary to use JSON-LD in its
-        most basic form. The language provides developers with a very easy learning
-        curve. Developers only need to know JSON and two
-        <a class="tref internalDFN" title="keyword" href="#dfn-keyword">keywords</a>   (<code>@context</code> and <code>@id</code>) to use the basic functionality
-        in JSON-LD.</dd>
+      <dd>
+        No extra processors or software libraries are necessary to use JSON-LD in its most basic form.
+        The language provides developers with a very easy learning curve.
+        Developers only need to know JSON and two <a class="tref internalDFN" title="keyword" href="#dfn-keyword">keywords</a>   (<code>@context</code> and <code>@id</code>) to use the basic functionality in JSON-LD.
+      </dd>
       <dt>Compatibility</dt>
-      <dd>A JSON-LD document is always a valid JSON document. This ensures that all of
-        the standard JSON libraries work seamlessly with JSON-LD documents.</dd>
+      <dd>
+        A JSON-LD document is always a valid JSON document.
+        This ensures that all of the standard JSON libraries work seamlessly with JSON-LD documents.
+      </dd>
       <dt>Expressiveness</dt>
-      <dd>The syntax serializes directed graphs. This ensures that almost every real
-        world data model can be expressed.</dd>
+      <dd>The syntax serializes directed graphs.
+        This ensures that almost every real world data model can be expressed.
+      </dd>
       <dt>Terseness</dt>
-      <dd>The JSON-LD syntax is very terse and human readable, requiring as little effort
-        as possible from the developer.</dd>
+      <dd>The JSON-LD syntax is very terse and human readable, requiring as little effort as possible from the developer.</dd>
       <dt>Zero Edits, most of the time</dt>
       <dd>JSON-LD ensures a smooth and simple transition from existing JSON-based systems.
         In many cases, zero edits to the JSON document and the addition of one line
         to the HTTP response should suffice (see <a class="sectionRef sec-ref" href="#interpreting-json-as-json-ld">section 6.8 Interpreting JSON as JSON-LD</a>).
-        This allows organizations that have already deployed large JSON-based infrastructure
-        to use JSON-LD's features in a way that is not disruptive to their day-to-day
-        operations and is transparent to their current customers. However, there
-        are times where mapping JSON to a graph representation is a complex undertaking.
-        In these instances, rather than extending JSON-LD to support esoteric use
-        cases, we chose not to support the use case. While Zero Edits is a design
-        goal, it is not always possible without adding great complexity to the language.
+        This allows organizations that have already deployed large JSON-based infrastructure to use JSON-LD's features in a way that is not disruptive to their day-to-day operations and is transparent to their current customers.
+        However, there are times where mapping JSON to a graph representation is a complex undertaking.
+        In these instances, rather than extending JSON-LD to support esoteric use cases, we chose not to support the use case.
+        While Zero Edits is a design goal, it is not always possible without adding great complexity to the language.
         JSON-LD focuses on simplicity when possible.
       </dd>
       <dt>Usable as RDF</dt>
-      <dd>JSON-LD is usable by developers as idiomatic JSON, with no need to understand
+      <dd>
+        JSON-LD is usable by developers as idiomatic JSON, with no need to understand
         RDF [<cite><a class="bibref" href="#bib-RDF11-CONCEPTS">RDF11-CONCEPTS</a></cite>].
-        JSON-LD is also usable as RDF, so people intending to use JSON-LD with RDF
-        tools will find it can be used like any other RDF syntax. Complete details
-        of how JSON-LD relates to RDF are in section
+        JSON-LD is also usable as RDF, so people intending to use JSON-LD with RDF tools will find it can be used like any other RDF syntax.
+        Complete details of how JSON-LD relates to RDF are in section
         <a href="#relationship-to-rdf" class="sec-ref"><span class="secno">9.</span> <span class="sec-title">Relationship to RDF</span></a>.</dd>
     </dl>
   </section>
@@ -689,9 +738,10 @@
     <section class="normative" id="general-terminology">
       <h3 aria-level="2" role="heading" id="h3_general-terminology"><span class="secno">3.1 </span>General Terminology</h3>
 
-      <p>This document uses the following terms as defined in JSON [<cite><a class="bibref" href="#bib-RFC4627">RFC4627</a></cite>].
-        Refer to the <em>JSON Grammar</em> section in [<cite><a class="bibref" href="#bib-RFC4627">RFC4627</a></cite>]
-        for formal definitions.</p>
+      <p>
+        This document uses the following terms as defined in JSON [<cite><a class="bibref" href="#bib-RFC4627">RFC4627</a></cite>].
+        Refer to the <em>JSON Grammar</em> section in [<cite><a class="bibref" href="#bib-RFC4627">RFC4627</a></cite>] for formal definitions.
+      </p>
 
       <dl>
         <dt><dfn title="json-object" id="dfn-json-object">JSON object</dfn></dt>
@@ -700,29 +750,29 @@
           A key is a <a class="tref internalDFN" title="string" href="#dfn-string">string</a>.
           A single colon comes after each key, separating the key from the value.
           A single comma separates a value from a following key.
-          In contrast to JSON, in JSON-LD the keys in an object must be unique.</dd>
+          In contrast to JSON, in JSON-LD the keys in an object must be unique.
+        </dd>
         <dt><dfn title="array" id="dfn-array">array</dfn></dt>
-        <dd>An array structure is represented as square brackets surrounding zero or
-          more values. Values are separated by commas. In JSON, an array is an <em>ordered</em> sequence of zero or more values. While JSON-LD uses the same array representation
-          as JSON, the collection is <em>unordered</em> by default. While order is
-          preserved in regular JSON arrays, it is not in regular JSON-LD arrays unless
-          specifically defined (see <a class="sectionRef sec-ref" href="#sets-and-lists">section 6.11 Sets and Lists</a>).</dd>
+        <dd>
+          An array structure is represented as square brackets surrounding zero or more values.
+          Values are separated by commas.
+          In JSON, an array is an <em>ordered</em> sequence of zero or more values.
+          While JSON-LD uses the same array representation as JSON, the collection is <em>unordered</em> by default.
+          While order is preserved in regular JSON arrays, it is not in regular JSON-LD arrays unless specifically defined
+          (see <a class="sectionRef sec-ref" href="#sets-and-lists">section 6.11 Sets and Lists</a>).
+        </dd>
         <dt><dfn title="string" id="dfn-string">string</dfn></dt>
         <dd>
-          A string is a sequence of zero or more Unicode characters, wrapped in double quotes,
-          using backslash escapes (if necessary).</dd>
-        <dt><dfn title="number" id="dfn-number">number</dfn></dt>
-        <dd>A number is similar to that used in most programming languages, except that
-          the octal and hexadecimal formats are not used and leading zeros are not
-          allowed.
+          A string is a sequence of zero or more Unicode characters, wrapped in double quotes, using backslash escapes (if necessary).
         </dd>
+        <dt><dfn title="number" id="dfn-number">number</dfn></dt>
+        <dd>A number is similar to that used in most programming languages, except that the octal and hexadecimal formats are not used and leading zeros are not allowed.</dd>
         <dt><dfn title="true" id="dfn-true">true</dfn> and <dfn title="false" id="dfn-false">false</dfn></dt>
-        <dd>
-          Values that are used to express one of two possible boolean states.</dd>
+        <dd>Values that are used to express one of two possible boolean states.</dd>
         <dt><dfn title="null" id="dfn-null">null</dfn></dt>
-        <dd>The <a class="tref internalDFN" title="null" href="#dfn-null">null</a> value,
-          which is typically used to clear or forget data. For example, a key-value
-          pair in the
+        <dd>
+          The <a class="tref internalDFN" title="null" href="#dfn-null">null</a> value, which is typically used to clear or forget data.
+          For example, a key-value pair in the
           <code>@context</code> where the value is <a class="tref internalDFN" title="null" href="#dfn-null">null</a> explicitly decouples a
           <a class="tref internalDFN" title="term" href="#dfn-term">term</a>'s association with an
           <a class="tref internalDFN" title="iri" href="#dfn-iri"><abbr title="Internationalized Resource Identifier">IRI</abbr></a>.
@@ -731,16 +781,17 @@
           the same meaning as if the key-value pair was not defined. If <code>@value</code>,
           <code>@list</code>, or
           <code>@set</code> is set to <a class="tref internalDFN" title="null" href="#dfn-null">null</a> in expanded form,
-          then the entire <a class="tref internalDFN" title="json-object" href="#dfn-json-object">JSON object</a> is ignored.</dd>
+          then the entire <a class="tref internalDFN" title="json-object" href="#dfn-json-object">JSON object</a> is ignored.
+        </dd>
       </dl>
     </section>
 
     <section class="informative" id="data-model-overview">
       <h3 aria-level="2" role="heading" id="h3_data-model-overview"><span class="secno">3.2 </span>Data Model Overview</h3>
-      <p><em>This section is non-normative.</em></p>
+      <p><em>Esta seção é não-normativa.</em></p>
 
-      <p>Generally speaking, the data model used for JSON-LD is a labeled, directed
-        <a class="tref internalDFN" title="graph" href="#dfn-graph">graph</a>.
+      <p>
+        Generally speaking, the data model used for JSON-LD is a labeled, directed <a class="tref internalDFN" title="graph" href="#dfn-graph">graph</a>.
         The graph contains
         <a class="tref internalDFN" title="node" href="#dfn-node">nodes</a>, which are connected by
         <a class="tref internalDFN" title="edge" href="#dfn-edge">edges</a>.
@@ -760,9 +811,9 @@
         section <a href="#data-model" class="sec-ref"><span class="secno">7.</span> <span class="sec-title">Data Model</span></a>.
       </p>
 
-      <p>Developers who are familiar with Linked Data technologies will recognize the
-        data model as the RDF Data Model. To dive deeper into how JSON-LD and RDF
-        are related, see section
+      <p>
+        Developers who are familiar with Linked Data technologies will recognize the data model as the RDF Data Model.
+        To dive deeper into how JSON-LD and RDF are related, see section
         <a href="#relationship-to-rdf" class="sec-ref"><span class="secno">9.</span> <span class="sec-title">Relationship to RDF</span></a>.
       </p>
     </section>
@@ -770,71 +821,83 @@
     <section class="normative" id="syntax-tokens-and-keywords">
       <h3 aria-level="2" role="heading" id="h3_syntax-tokens-and-keywords"><span class="secno">3.3 </span>Syntax Tokens and Keywords</h3>
 
-      <p>JSON-LD specifies a number of syntax tokens and <dfn title="keyword" id="dfn-keyword">keywords</dfn>        that are a core part of the language:</p>
+      <p>JSON-LD specifies a number of syntax tokens and <dfn title="keyword" id="dfn-keyword">keywords</dfn> that are a core part of the language:</p>
 
       <dl>
         <dt><code>@context</code></dt>
-        <dd>Used to define the short-hand names that are used throughout a JSON-LD document.
-          These short-hand names are called <a class="tref internalDFN" title="term"
-            href="#dfn-term">terms</a> and help developers to express specific identifiersin
-          a compact manner. The <code>@context</code> keyword is described in detail
-          in
-          <a class="sectionRef sec-ref" href="#the-context">section 5.1 The Context</a>.</dd>
+        <dd>
+          Used to define the short-hand names that are used throughout a JSON-LD document.
+          These short-hand names are called <a class="tref internalDFN" title="term" href="#dfn-term">terms</a> and help developers to express specific identifiersin a compact manner.
+          The <code>@context</code> keyword is described in detail in
+          <a class="sectionRef sec-ref" href="#the-context">section 5.1 The Context</a>.
+        </dd>
         <dt><code>@id</code></dt>
-        <dd>Used to uniquely identify <em>things</em> that are being described in the
-          document with <a class="tref internalDFN" title="iri" href="#dfn-iri">IRIs</a>     or
-          <a class="tref internalDFN" title="blank-node-identifier" href="#dfn-blank-node-identifier">blank node identifiers</a>.
-          This keyword is described in <a class="sectionRef sec-ref" href="#node-identifiers">section 5.3 Node Identifiers</a>.</dd>
+        <dd>
+          Used to uniquely identify <em>things</em> that are being described in the document with <a class="tref internalDFN" title="iri" href="#dfn-iri">IRIs</a> or <a class="tref internalDFN" title="blank-node-identifier" href="#dfn-blank-node-identifier">blank node identifiers</a>.
+          This keyword is described in <a class="sectionRef sec-ref" href="#node-identifiers">section 5.3 Node Identifiers</a>.
+        </dd>
         <dt><code>@value</code></dt>
-        <dd>Used to specify the data that is associated with a particular
-          <a class="tref internalDFN" title="property" href="#dfn-property">property</a>     in the graph. This keyword is described in
-          <a class="sectionRef sec-ref" href="#string-internationalization">section 6.9 String Internationalization</a>     and
-          <a class="sectionRef sec-ref" href="#typed-values">section 6.4 Typed Values</a>.</dd>
+        <dd>
+          Used to specify the data that is associated with a particular <a class="tref internalDFN" title="property" href="#dfn-property">property</a> in the graph.
+          This keyword is described in <a class="sectionRef sec-ref" href="#string-internationalization">section 6.9 String Internationalization</a> and <a class="sectionRef sec-ref" href="#typed-values">section 6.4 Typed Values</a>.
+        </dd>
         <dt><code>@language</code></dt>
-        <dd>Used to specify the language for a particular string value or the default
-          language of a JSON-LD document. This keyword is described in
-          <a class="sectionRef sec-ref" href="#string-internationalization">section 6.9 String Internationalization</a>.</dd>
+        <dd>
+          Used to specify the language for a particular string value or the default language of a JSON-LD document.
+          This keyword is described in <a class="sectionRef sec-ref" href="#string-internationalization">section 6.9 String Internationalization</a>.
+        </dd>
         <dt><code>@type</code></dt>
-        <dd>Used to set the data type of a <a class="tref internalDFN" title="node" href="#dfn-node">node</a>     or
+        <dd>
+          Used to set the data type of a <a class="tref internalDFN" title="node" href="#dfn-node">node</a> or
           <a class="tref internalDFN" title="typed-value" href="#dfn-typed-value">typed value</a>.
           This keyword is described in
-          <a class="sectionRef sec-ref" href="#typed-values">section 6.4 Typed Values</a>.</dd>
+          <a class="sectionRef sec-ref" href="#typed-values">section 6.4 Typed Values</a>.
+        </dd>
         <dt><code>@container</code></dt>
-        <dd>Used to set the default container type for a <a class="tref internalDFN"
-            title="term" href="#dfn-term">term</a>. This keyword is described in
-          <a class="sectionRef sec-ref" href="#sets-and-lists">section 6.11 Sets and Lists</a>.</dd>
+        <dd>
+          Used to set the default container type for a <a class="tref internalDFN" title="term" href="#dfn-term">term</a>.
+          This keyword is described in <a class="sectionRef sec-ref" href="#sets-and-lists">section 6.11 Sets and Lists</a>.
+        </dd>
         <dt><code>@list</code></dt>
-        <dd>Used to express an ordered set of data. This keyword is described in <a class="sectionRef sec-ref"
-            href="#sets-and-lists">section 6.11 Sets and Lists</a>.</dd>
+        <dd>
+          Used to express an ordered set of data.
+          This keyword is described in <a class="sectionRef sec-ref" href="#sets-and-lists">section 6.11 Sets and Lists</a>.
+        </dd>
         <dt><code>@set</code></dt>
-        <dd>Used to express an unordered set of data and to ensure that values are always
-          represented as arrays. This keyword is described in
-          <a class="sectionRef sec-ref" href="#sets-and-lists">section 6.11 Sets and Lists</a>.</dd>
+        <dd>
+          Used to express an unordered set of data and to ensure that values are always represented as arrays.
+          This keyword is described in <a class="sectionRef sec-ref" href="#sets-and-lists">section 6.11 Sets and Lists</a>.
+        </dd>
         <dt><code>@reverse</code></dt>
-        <dd>Used to express reverse properties. This keyword is described in
-          <a class="sectionRef sec-ref" href="#reverse-properties">section 6.12 Reverse Properties</a>.</dd>
+        <dd>
+          Used to express reverse properties.
+          This keyword is described in <a class="sectionRef sec-ref" href="#reverse-properties">section 6.12 Reverse Properties</a>.
+        </dd>
         <dt><code>@index</code></dt>
-        <dd>Used to specify that a container is used to index information and that processing
-          should continue deeper into a JSON data structure. This keyword is described
-          in <a class="sectionRef sec-ref" href="#data-indexing">section 6.16 Data Indexing</a>.</dd>
+        <dd>
+          Used to specify that a container is used to index information and that processing should continue deeper into a JSON data structure.
+          This keyword is described in <a class="sectionRef sec-ref" href="#data-indexing">section 6.16 Data Indexing</a>.
+        </dd>
         <dt><code>@base</code></dt>
-        <dd>Used to set the base <abbr title="Internationalized Resource Identifier">IRI</abbr>     against which <a class="tref internalDFN" title="relative-iri" href="#dfn-relative-iri">relative IRIs</a>     are resolved. This keyword is described in <a class="sectionRef sec-ref"
-            href="#base-iri">section 6.1 Base IRI</a>.</dd>
+        <dd>
+          Used to set the base <abbr title="Internationalized Resource Identifier">IRI</abbr> against which <a class="tref internalDFN" title="relative-iri" href="#dfn-relative-iri">relative IRIs</a> are resolved.
+          This keyword is described in <a class="sectionRef sec-ref" href="#base-iri">section 6.1 Base IRI</a>.
+        </dd>
         <dt><code>@vocab</code></dt>
-        <dd>Used to expand properties and values in <code>@type</code> with a common
-          prefix
-          <a class="tref internalDFN" title="iri" href="#dfn-iri"><abbr title="Internationalized Resource Identifier">IRI</abbr></a>.
-          This keyword is described in <a class="sectionRef sec-ref" href="#default-vocabulary">section 6.2 Default Vocabulary</a>.</dd>
+        <dd>
+          Used to expand properties and values in <code>@type</code> with a common prefix <a class="tref internalDFN" title="iri" href="#dfn-iri"><abbr title="Internationalized Resource Identifier">IRI</abbr></a>.
+          This keyword is described in <a class="sectionRef sec-ref" href="#default-vocabulary">section 6.2 Default Vocabulary</a>.
+        </dd>
         <dt><code>@graph</code></dt>
-        <dd>Used to express a <a class="tref internalDFN" title="graph" href="#dfn-graph">graph</a>.
-          This keyword is described in <a class="sectionRef sec-ref" href="#named-graphs">section 6.13 Named Graphs</a>.</dd>
+        <dd>
+          Used to express a <a class="tref internalDFN" title="graph" href="#dfn-graph">graph</a>.
+          This keyword is described in <a class="sectionRef sec-ref" href="#named-graphs">section 6.13 Named Graphs</a>.
+        </dd>
         <dt><code>:</code></dt>
-        <dd>The separator for JSON keys and values that use
-          <a class="tref internalDFN" title="compact-iri" href="#dfn-compact-iri">compact IRIs</a>.</dd>
+        <dd>The separator for JSON keys and values that use <a class="tref internalDFN" title="compact-iri" href="#dfn-compact-iri">compact IRIs</a>.</dd>
       </dl>
 
-      <p>All keys, <a class="tref internalDFN" title="keyword" href="#dfn-keyword">keywords</a>,
-        and values in JSON-LD are case-sensitive.</p>
+      <p>All keys, <a class="tref internalDFN" title="keyword" href="#dfn-keyword">keywords</a>, and values in JSON-LD are case-sensitive.</p>
     </section>
   </section>
 
@@ -842,11 +905,12 @@
     <!--OddPage-->
     <h2 aria-level="1" role="heading" id="h2_conformance"><span class="secno">4. </span>Conformance</h2>
 
-    <p>This specification describes the conformance criteria for JSON-LD documents.
+    <p>
+      This specification describes the conformance criteria for JSON-LD documents.
       This criteria is relevant to authors and authoring tool implementers.
-      As well as sections marked as non-normative, all authoring guidelines, diagrams, examples,
-      and notes in this specification are non-normative.
-      Everything else in this specification is normative.</p>
+      As well as sections marked as non-normative, all authoring guidelines, diagrams, examples, and notes in this specification are non-normative.
+      Everything else in this specification is normative.
+    </p>
 
     <p>A <a class="tref internalDFN" title="json-ld-document" href="#dfn-json-ld-document">JSON-LD document</a> complies with this specification if it follows the normative statements in
       appendix <a href="#json-ld-grammar" class="sec-ref"><span class="secno">8.</span> <span class="sec-title">JSON-LD Grammar</span></a>.
@@ -869,7 +933,7 @@
   <section class="informative" id="basic-concepts">
     <!--OddPage-->
     <h2 aria-level="1" role="heading" id="h2_basic-concepts"><span class="secno">5. </span>Basic Concepts</h2>
-    <p><em>This section is non-normative.</em></p>
+    <p><em>Esta seção é não-normativa.</em></p>
 
     <p>JSON [<cite><a class="bibref" href="#bib-RFC4627">RFC4627</a></cite>] is a lightweight,
       language-independent data interchange format.
@@ -931,7 +995,7 @@
 
     <section class="informative" id="the-context">
       <h3 aria-level="2" role="heading" id="h3_the-context"><span class="secno">5.1 </span>The Context</h3>
-      <p><em>This section is non-normative.</em></p>
+      <p><em>Esta seção é não-normativa.</em></p>
 
       <p>When two people communicate with one another, the conversation takes place
         in a shared environment, typically called "the context of the conversation".
@@ -958,19 +1022,19 @@
       <div class="example">
         <div class="example-title"><span>Example 3</span>: Context for the sample document in the previous section</div>
         <pre class="example">{
-          <span class="highlight">"@context":
+  <span class="highlight">"@context":
   {
-    "name": "http://schema.org/name",</span> <span class="comment">← This means that 'name' is shorthand for 'http://schema.org/name'</span>          <span class="highlight">
+    "name": "http://schema.org/name",</span>  <span class="comment">← This means that 'name' is shorthand for 'http://schema.org/name'</span> <span class="highlight">
     "image": {
-      "@id": "http://schema.org/image",</span> <span class="comment">← This means that 'image' is shorthand for 'http://schema.org/image'</span>          <span class="highlight">
-      "@type": "@id"</span> <span class="comment">← This means that a string value associated with 'image' should be interpreted as an identifier that is an IRI</span>          <span class="highlight">
+      "@id": "http://schema.org/image",</span>  <span class="comment">← This means that 'image' is shorthand for 'http://schema.org/image'</span> <span class="highlight">
+      "@type": "@id"</span>  <span class="comment">← This means that a string value associated with 'image' should be interpreted as an identifier that is an IRI</span> <span class="highlight">
     },
     "homepage": {
-      "@id": "http://schema.org/url",</span> <span class="comment">← This means that 'homepage' is shorthand for 'http://schema.org/url'</span>          <span class="highlight">
-      "@type": "@id"</span> <span class="comment">← This means that a string value associated with 'homepage' should be interpreted as an identifier that is an IRI</span>          <span class="highlight">
+      "@id": "http://schema.org/url",</span>  <span class="comment">← This means that 'homepage' is shorthand for 'http://schema.org/url'</span> <span class="highlight">
+      "@type": "@id"</span>  <span class="comment">← This means that a string value associated with 'homepage' should be interpreted as an identifier that is an IRI</span> <span class="highlight">
     }
-  }</span> }
-          </pre>
+  }</span>
+}</pre>
       </div>
 
       <p>As the <a class="tref internalDFN" title="context" href="#dfn-context">context</a>   above shows, the value of a <dfn title="term-definition" id="dfn-term-definition">term definition</dfn>        can either be a simple string, mapping the <a class="tref internalDFN" title="term"
@@ -1052,7 +1116,7 @@
 
     <section class="informative" id="iris">
       <h3 aria-level="2" role="heading" id="h3_iris"><span class="secno">5.2 </span>IRIs</h3>
-      <p><em>This section is non-normative.</em></p>
+      <p><em>Esta seção é não-normativa.</em></p>
 
       <p><a class="tref internalDFN" title="iri" href="#dfn-iri">IRIs</a> (Internationalized
         Resource Identifiers [
@@ -1113,13 +1177,14 @@
 
       <div class="example">
         <div class="example-title"><span>Example 9</span>: Term expansion from context definition</div>
-        <pre class="example">{ "
-          <span class="highlight">@context</span>": { "
-          <span class="highlight">name</span>": "<span class="highlight">http://schema.org/name</span>"
-          }, "
-          <span class="highlight">name</span>": "Manu Sporny", "status": "trollin'"
-          }
-          </pre>
+        <pre class="example">{
+  "<span class="highlight">@context</span>":
+  {
+    "<span class="highlight">name</span>": "<span class="highlight">http://schema.org/name</span>"
+  },
+  "<span class="highlight">name</span>": "Manu Sporny",
+  "status": "trollin'"
+}</pre>
       </div>
 
       <p>JSON keys that do not expand to an <a class="tref internalDFN" title="iri"
@@ -1176,7 +1241,7 @@
 
     <section class="informative" id="node-identifiers">
       <h3 aria-level="2" role="heading" id="h3_node-identifiers"><span class="secno">5.3 </span>Node Identifiers</h3>
-      <p><em>This section is non-normative.</em></p>
+      <p><em>Esta seção é não-normativa.</em></p>
 
       <p>To be able to externally reference <a class="tref internalDFN" title="node"
           href="#dfn-node">nodes</a> in a <a class="tref internalDFN" title="graph"
@@ -1217,7 +1282,7 @@
 
     <section class="informative" id="specifying-the-type">
       <h3 aria-level="2" role="heading" id="h3_specifying-the-type"><span class="secno">5.4 </span>Specifying the Type</h3>
-      <p><em>This section is non-normative.</em></p>
+      <p><em>Esta seção é não-normativa.</em></p>
 
       <p>The type of a particular node can be specified using the <code>@type</code>
         <a class="tref internalDFN" title="keyword" href="#dfn-keyword">keyword</a>.
@@ -1287,7 +1352,7 @@
 
     <section class="informative" id="base-iri">
       <h3 aria-level="2" role="heading" id="h3_base-iri"><span class="secno">6.1 </span>Base <abbr title="Internationalized Resource Identifier">IRI</abbr></h3>
-      <p><em>This section is non-normative.</em></p>
+      <p><em>Esta seção é não-normativa.</em></p>
 
       <p>JSON-LD allows
         <a class="tref internalDFN" title="iri" href="#dfn-iri"><abbr title="Internationalized Resource Identifier">IRI</abbr></a>s
@@ -1302,10 +1367,13 @@
 
       <div class="example">
         <div class="example-title"><span>Example 15</span>: Use a relative IRI as node identifier</div>
-        <pre class="example">{ "@context": { "label": "http://www.w3.org/2000/01/rdf-schema#label" },
-          <span class="highlight">"@id": ""</span>, "label": "Just a simple document"
-          }
-          </pre>
+        <pre class="example">{
+  "@context": {
+    "label": "http://www.w3.org/2000/01/rdf-schema#label"
+  },
+  <span class="highlight">"@id": ""</span>,
+  "label": "Just a simple document"
+}</pre>
       </div>
 
       <p>This document uses an empty <code>@id</code>, which resolves to the document
@@ -1316,9 +1384,13 @@
 
       <div class="example">
         <div class="example-title"><span>Example 16</span>: Setting the document base in a document</div>
-        <pre class="example">{ "@context": {
-          <span class="highlight">"@base": "http://example.com/document.jsonld"</span>          }, "@id": "", "label": "Just a simple document" }
-          </pre>
+        <pre class="example">{
+  "@context": {
+    <span class="highlight">"@base": "http://example.com/document.jsonld"</span>
+  },
+  "@id": "",
+  "label": "Just a simple document"
+}</pre>
       </div>
 
       <p>Setting <code>@base</code> to <a class="tref internalDFN" title="null" href="#dfn-null">null</a>   will prevent
@@ -1332,7 +1404,7 @@
 
     <section class="informative" id="default-vocabulary">
       <h3 aria-level="2" role="heading" id="h3_default-vocabulary"><span class="secno">6.2 </span>Default Vocabulary</h3>
-      <p><em>This section is non-normative.</em></p>
+      <p><em>Esta seção é não-normativa.</em></p>
 
       <p>At times, all properties and types may come from the same vocabulary. JSON-LD's
         <code>@vocab</code> keyword allows an author to set a common prefix to be
@@ -1363,17 +1435,23 @@
 
       <div class="example">
         <div class="example-title"><span>Example 18</span>: Using the null keyword to ignore data</div>
-        <pre class="example">{ "@context": { "@vocab": "http://schema.org/",
-          <span class="highlight">"databaseId": null</span> }, "@id": "http://example.org/places#BrewEats",
-          "@type": "Restaurant", "name": "Brew Eats",
-          <span class="highlight">"databaseId"</span>: "23987520" }
-          </pre>
+        <pre class="example">{
+  "@context":
+  {
+     "@vocab": "http://schema.org/",
+     <span class="highlight">"databaseId": null</span>
+  },
+    "@id": "http://example.org/places#BrewEats",
+    "@type": "Restaurant",
+    "name": "Brew Eats",
+    <span class="highlight">"databaseId"</span>: "23987520"
+}</pre>
       </div>
     </section>
 
     <section class="informative" id="compact-iris">
       <h3 aria-level="2" role="heading" id="h3_compact-iris"><span class="secno">6.3 </span>Compact IRIs</h3>
-      <p><em>This section is non-normative.</em></p>
+      <p><em>Esta seção é não-normativa.</em></p>
 
       <p>A <dfn title="compact-iri" id="dfn-compact-iri">compact <abbr title="Internationalized Resource Identifier">IRI</abbr></dfn>        is a way of expressing an
         <a class="tref internalDFN" title="iri" href="#dfn-iri"><abbr title="Internationalized Resource Identifier">IRI</abbr></a>   using a <em>prefix</em> and <em>suffix</em> separated by a colon (<code>:</code>).
@@ -1442,7 +1520,7 @@
 
     <section class="informative" id="typed-values">
       <h3 aria-level="2" role="heading" id="h3_typed-values"><span class="secno">6.4 </span>Typed Values</h3>
-      <p><em>This section is non-normative.</em></p>
+      <p><em>Esta seção é não-normativa.</em></p>
 
       <p>
         A value with an associated type, also known as a
@@ -1470,16 +1548,19 @@
       <div class="example">
         <div class="example-title"><span>Example 21</span>: Expanded term definition with type coercion</div>
         <pre class="example">{
-          <span class="highlight">"@context":
+  <span class="highlight">"@context":
   {
     "modified":
     {
       "@id": "http://purl.org/dc/terms/modified",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     }
-  },</span> ... "@id": "http://example.com/docs/1", "modified": "2010-05-29T14:17:39+02:00",
-          ... }
-          </pre>
+  },</span>
+...
+  "@id": "http://example.com/docs/1",
+  "modified": "2010-05-29T14:17:39+02:00",
+...
+}</pre>
       </div>
 
       <p>The <em>modified</em> key's value above is automatically type coerced to a
@@ -1605,7 +1686,7 @@
 
     <section class="informative" id="type-coercion">
       <h3 aria-level="2" role="heading" id="h3_type-coercion"><span class="secno">6.5 </span>Type Coercion</h3>
-      <p><em>This section is non-normative.</em></p>
+      <p><em>Esta seção é não-normativa.</em></p>
 
       <p>JSON-LD supports the coercion of values to particular data types. Type
         <dfn title="coercion" id="dfn-coercion">coercion</dfn> allows someone deploying
@@ -1723,16 +1804,28 @@
 
       <div class="example">
         <div class="example-title"><span>Example 25</span>: Term definitions using compact and absolute IRIs</div>
-        <pre class="example">{ "@context": { "foaf": "http://xmlns.com/foaf/0.1/", "
-          <span class="highlight">foaf:age</span>": {
-          <span class="highlight">"@id": "http://xmlns.com/foaf/0.1/age"</span>,
-          "@type": "xsd:integer" }, "
-          <span class="highlight">http://xmlns.com/foaf/0.1/homepage</span>": { "@type":
-          "@id" } }, "foaf:name": "John Smith", "
-          <span class="highlight">foaf:age</span>": "41", "
-          <span class="highlight">http://xmlns.com/foaf/0.1/homepage</span>": [ "http://personal.example.org/",
-          "http://work.example.com/jsmith/" ] }
-          </pre>
+        <pre class="example">{
+  "@context":
+  {
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "<span class="highlight">foaf:age</span>":
+    {
+      <span class="highlight">"@id": "http://xmlns.com/foaf/0.1/age"</span>,
+      "@type": "xsd:integer"
+    },
+    "<span class="highlight">http://xmlns.com/foaf/0.1/homepage</span>":
+    {
+      "@type": "@id"
+    }
+  },
+  "foaf:name": "John Smith",
+  "<span class="highlight">foaf:age</span>": "41",
+  "<span class="highlight">http://xmlns.com/foaf/0.1/homepage</span>":
+  [
+    "http://personal.example.org/",
+    "http://work.example.com/jsmith/"
+  ]
+}</pre>
       </div>
 
       <p>In this case the <code>@id</code> definition in the term definition is optional.
@@ -1766,7 +1859,7 @@
 
     <section class="informative" id="embedding">
       <h3 aria-level="2" role="heading" id="h3_embedding"><span class="secno">6.6 </span>Embedding</h3>
-      <p><em>This section is non-normative.</em></p>
+      <p><em>Esta seção é não-normativa.</em></p>
 
       <p><dfn title="embedding" id="dfn-embedding">Embedding</dfn> is a JSON-LD feature
         that allows an author to use <a class="tref internalDFN" title="node-object"
@@ -1797,7 +1890,7 @@
 
     <section class="informative" id="advanced-context-usage">
       <h3 aria-level="2" role="heading" id="h3_advanced-context-usage"><span class="secno">6.7 </span>Advanced Context Usage</h3>
-      <p><em>This section is non-normative.</em></p>
+      <p><em>Esta seção é não-normativa.</em></p>
 
       <p>Section <a href="#the-context" class="sec-ref"><span class="secno">5.1</span> <span class="sec-title">The Context</span></a>   introduced the basics of what makes JSON-LD work. This section expands on
         the basic principles of the
@@ -1876,14 +1969,16 @@
       <div class="example">
         <div class="example-title"><span>Example 29</span>: Combining external and local contexts</div>
         <pre class="example">{
-          <span class="highlight">"@context": [
+  <span class="highlight">"@context": [
     "http://json-ld.org/contexts/person.jsonld",
     {
       "pic": "http://xmlns.com/foaf/0.1/depiction"
     }
-  ],</span> "name": "Manu Sporny", "homepage": "http://manu.sporny.org/",
-          <span class="highlight">"pic": "http://twitter.com/account/profile_image/manusporny"</span>          }
-          </pre>
+  ],</span>
+  "name": "Manu Sporny",
+  "homepage": "http://manu.sporny.org/",
+  <span class="highlight">"pic": "http://twitter.com/account/profile_image/manusporny"</span>
+}</pre>
       </div>
 
       <div class="note">
@@ -1973,7 +2068,7 @@ Content-Type: <span class="highlight">application/json</span>
 
     <section class="informative" id="string-internationalization">
       <h3 aria-level="2" role="heading" id="h3_string-internationalization"><span class="secno">6.9 </span>String Internationalization</h3>
-      <p><em>This section is non-normative.</em></p>
+      <p><em>Esta seção é não-normativa.</em></p>
 
       <p>At times, it is important to annotate a <a class="tref internalDFN" title="string"
           href="#dfn-string">string</a> with its language. In JSON-LD this is possible
@@ -1984,13 +2079,14 @@ Content-Type: <span class="highlight">application/json</span>
       <div class="example">
         <div class="example-title"><span>Example 31</span>: Setting the default language of a JSON-LD document</div>
         <pre class="example">{
-          <span class="highlight">"@context":
+  <span class="highlight">"@context":
   {
     ...
     "@language": "ja"
-  }</span>, "name": <span class="highlight">"花澄"</span>, "occupation":
-          <span class="highlight">"科学者"</span> }
-          </pre>
+  }</span>,
+  "name": <span class="highlight">"花澄"</span>,
+  "occupation": <span class="highlight">"科学者"</span>
+}</pre>
       </div>
 
       <p>The example above would associate the <code>ja</code> language code with the
@@ -2023,15 +2119,22 @@ Content-Type: <span class="highlight">application/json</span>
 
       <div class="example">
         <div class="example-title"><span>Example 33</span>: Expanded term definition with language</div>
-        <pre class="example">{ "@context": { ... "ex": "http://example.com/vocab/", "@language": "ja",
-          "name": { "@id": "ex:name", <span class="highlight">"@language": null</span>          }, "occupation": { "@id": "ex:occupation" }, "occupation_en": { "@id":
-          "ex:occupation", <span class="highlight">"@language": "en"</span> }, "occupation_cs":
-          { "@id": "ex:occupation", <span class="highlight">"@language": "cs"</span>          } },
-          <span class="highlight">"name": "Yagyū Muneyoshi",
+        <pre class="example">{
+  "@context": {
+    ...
+    "ex": "http://example.com/vocab/",
+    "@language": "ja",
+    "name": { "@id": "ex:name", <span class="highlight">"@language": null</span> },
+    "occupation": { "@id": "ex:occupation" },
+    "occupation_en": { "@id": "ex:occupation", <span class="highlight">"@language": "en"</span> },
+    "occupation_cs": { "@id": "ex:occupation", <span class="highlight">"@language": "cs"</span> }
+  },
+  <span class="highlight">"name": "Yagyū Muneyoshi",
   "occupation": "忍者",
   "occupation_en": "Ninja",
-  "occupation_cs": "Nindža",</span> ... }
-          </pre>
+  "occupation_cs": "Nindža",</span>
+  ...
+}</pre>
       </div>
 
       <p>The example above would associate <em>忍者</em> with the specified default language
@@ -2057,13 +2160,21 @@ Content-Type: <span class="highlight">application/json</span>
 
       <div class="example">
         <div class="example-title"><span>Example 34</span>: Language map expressing a property in three languages</div>
-        <pre class="example">{ "@context": { ... "occupation": { "@id": "ex:occupation", <span class="highlight">"@container": "@language"</span>          } }, "name": "Yagyū Muneyoshi", "occupation":
-          <span class="highlight">{
+        <pre class="example">{
+  "@context":
+  {
+    ...
+    "occupation": { "@id": "ex:occupation", <span class="highlight">"@container": "@language"</span> }
+  },
+  "name": "Yagyū Muneyoshi",
+  "occupation":
+  <span class="highlight">{
     "ja": "忍者",
     "en": "Ninja",
     "cs": "Nindža"
-  }</span> ... }
-          </pre>
+  }</span>
+  ...
+}</pre>
       </div>
 
       <p>The example above expresses exactly the same information as the previous example
@@ -2079,11 +2190,17 @@ Content-Type: <span class="highlight">application/json</span>
 
       <div class="example">
         <div class="example-title"><span>Example 35</span>: Overriding default language using an expanded value</div>
-        <pre class="example">{ "@context": { ... "@language": "ja" }, "name": "花澄", "occupation":
-          <span
-            class="highlight">{ "@value": "Scientist", "@language": "en" }
-            </span>
-            }</pre>
+        <pre class="example">{
+  "@context": {
+    ...
+    "@language": "ja"
+  },
+  "name": "花澄",
+  "occupation": <span class="highlight">{
+    "@value": "Scientist",
+    "@language": "en"
+  }</span>
+}</pre>
       </div>
 
       <p>This makes it possible to specify a plain string by omitting the
@@ -2112,7 +2229,7 @@ Content-Type: <span class="highlight">application/json</span>
 
     <section class="informative" id="iri-expansion-within-a-context">
       <h3 aria-level="2" role="heading" id="h3_iri-expansion-within-a-context"><span class="secno">6.10 </span><abbr title="Internationalized Resource Identifier">IRI</abbr>   Expansion within a Context</h3>
-      <p><em>This section is non-normative.</em></p>
+      <p><em>Esta seção é não-normativa.</em></p>
       <p>In general, normal <abbr title="Internationalized Resource Identifier">IRI</abbr>   expansion rules apply anywhere an <abbr title="Internationalized Resource Identifier">IRI</abbr>   is expected (see <a class="sectionRef sec-ref" href="#iris">section 5.2 IRIs</a>).
         Within a <a class="tref internalDFN" title="context" href="#dfn-context">context</a>   definition, this can mean that terms defined within the context may also
         be used within that context as long as there are no circular dependencies.
@@ -2211,12 +2328,24 @@ Content-Type: <span class="highlight">application/json</span>
 
       <div class="example">
         <div class="example-title"><span>Example 40</span>: Associating context definitions with absolute IRIs</div>
-        <pre class="example">{ "@context": { "foaf": "http://xmlns.com/foaf/0.1/", "xsd": "http://www.w3.org/2001/XMLSchema#",
-          "name": "foaf:name", "foaf:age": { "@id": "foaf:age", "@type": "xsd:integer"
-          }, "
-          <span class="highlight">http://xmlns.com/foaf/0.1/homepage</span>": { "@type":
-          "@id" } }, ... }
-          </pre>
+        <pre class="example">{
+  "@context":
+  {
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "name": "foaf:name",
+    "foaf:age":
+    {
+      "@id": "foaf:age",
+      "@type": "xsd:integer"
+    },
+    "<span class="highlight">http://xmlns.com/foaf/0.1/homepage</span>":
+    {
+      "@type": "@id"
+    }
+  },
+  ...
+}</pre>
       </div>
 
       <p>In order for the <a class="tref internalDFN" title="absolute-iri" href="#dfn-absolute-iri">absolute <abbr title="Internationalized Resource Identifier">IRI</abbr></a>   to match above, the <a class="tref internalDFN" title="absolute-iri" href="#dfn-absolute-iri">absolute <abbr title="Internationalized Resource Identifier">IRI</abbr></a>   needs to be used in the <a class="tref internalDFN" title="json-ld-document"
@@ -2253,7 +2382,7 @@ Content-Type: <span class="highlight">application/json</span>
 
     <section class="informative" id="sets-and-lists">
       <h3 aria-level="2" role="heading" id="h3_sets-and-lists"><span class="secno">6.11 </span>Sets and Lists</h3>
-      <p><em>This section is non-normative.</em></p>
+      <p><em>Esta seção é não-normativa.</em></p>
 
       <p>A JSON-LD author can express multiple values in a compact way by using
         <a class="tref internalDFN" title="array" href="#dfn-array">arrays</a>. Since
@@ -2403,7 +2532,7 @@ Content-Type: <span class="highlight">application/json</span>
 
     <section class="informative" id="reverse-properties">
       <h3 aria-level="2" role="heading" id="h3_reverse-properties"><span class="secno">6.12 </span>Reverse Properties</h3>
-      <p><em>This section is non-normative.</em></p>
+      <p><em>Esta seção é não-normativa.</em></p>
 
       <p>JSON-LD serializes directed <a class="tref internalDFN" title="graph" href="#dfn-graph">graphs</a>.
         That means that every <a class="tref internalDFN" title="property" href="#dfn-property">property</a>   points from a <a class="tref internalDFN" title="node" href="#dfn-node">node</a>   to another <a class="tref internalDFN" title="node" href="#dfn-node">node</a>   or <a class="tref internalDFN" title="json-ld-value" href="#dfn-json-ld-value">value</a>.
@@ -2454,7 +2583,7 @@ Content-Type: <span class="highlight">application/json</span>
 
     <section class="informative" id="named-graphs">
       <h3 aria-level="2" role="heading" id="h3_named-graphs"><span class="secno">6.13 </span>Named Graphs</h3>
-      <p><em>This section is non-normative.</em></p>
+      <p><em>Esta seção é não-normativa.</em></p>
 
       <p>At times, it is necessary to make statements about a <a class="tref internalDFN"
           title="graph" href="#dfn-graph">graph</a> itself, rather than just a single
@@ -2610,7 +2739,7 @@ Content-Type: <span class="highlight">application/json</span>
 
     <section class="informative" id="identifying-blank-nodes">
       <h3 aria-level="2" role="heading" id="h3_identifying-blank-nodes"><span class="secno">6.14 </span>Identifying Blank Nodes</h3>
-      <p><em>This section is non-normative.</em></p>
+      <p><em>Esta seção é não-normativa.</em></p>
 
       <p>At times, it becomes necessary to be able to express information without being
         able to uniquely identify the <a class="tref internalDFN" title="node" href="#dfn-node">node</a>   with an <a class="tref internalDFN" title="iri" href="#dfn-iri"><abbr title="Internationalized Resource Identifier">IRI</abbr></a>.
@@ -2652,7 +2781,7 @@ Content-Type: <span class="highlight">application/json</span>
 
     <section class="informative" id="aliasing-keywords">
       <h3 aria-level="2" role="heading" id="h3_aliasing-keywords"><span class="secno">6.15 </span>Aliasing Keywords</h3>
-      <p><em>This section is non-normative.</em></p>
+      <p><em>Esta seção é não-normativa.</em></p>
 
       <p>Each of the JSON-LD <a class="tref internalDFN" title="keyword" href="#dfn-keyword">keywords</a>,
         except for <code>@context</code>, may be aliased to application-specific
@@ -2683,7 +2812,7 @@ Content-Type: <span class="highlight">application/json</span>
 
     <section class="informative" id="data-indexing">
       <h3 aria-level="2" role="heading" id="h3_data-indexing"><span class="secno">6.16 </span>Data Indexing</h3>
-      <p><em>This section is non-normative.</em></p>
+      <p><em>Esta seção é não-normativa.</em></p>
 
       <p>Databases are typically used to make access to data more efficient. Developers
         often extend this sort of functionality into their application data to deliver
@@ -2800,7 +2929,7 @@ Content-Type: <span class="highlight">application/json</span>
 
     <section class="informative" id="expanded-document-form">
       <h3 aria-level="2" role="heading" id="h3_expanded-document-form"><span class="secno">6.17 </span>Expanded Document Form</h3>
-      <p><em>This section is non-normative.</em></p>
+      <p><em>Esta seção é não-normativa.</em></p>
 
       <p>The JSON-LD Processing Algorithms and API specification [<cite><a class="bibref" href="#bib-JSON-LD-API">JSON-LD-API</a></cite>]
         defines a method for <em>expanding</em> a JSON-LD document. Expansion is
@@ -2841,7 +2970,7 @@ Content-Type: <span class="highlight">application/json</span>
 
     <section class="informative" id="compacted-document-form">
       <h3 aria-level="2" role="heading" id="h3_compacted-document-form"><span class="secno">6.18 </span>Compacted Document Form</h3>
-      <p><em>This section is non-normative.</em></p>
+      <p><em>Esta seção é não-normativa.</em></p>
 
       <p>The JSON-LD Processing Algorithms and API specification [<cite><a class="bibref" href="#bib-JSON-LD-API">JSON-LD-API</a></cite>]
         defines a method for <em>compacting</em> a JSON-LD document. Compaction is
@@ -2907,7 +3036,7 @@ Content-Type: <span class="highlight">application/json</span>
 
     <section class="informative" id="flattened-document-form">
       <h3 aria-level="2" role="heading" id="h3_flattened-document-form"><span class="secno">6.19 </span>Flattened Document Form</h3>
-      <p><em>This section is non-normative.</em></p>
+      <p><em>Esta seção é não-normativa.</em></p>
 
       <p>The JSON-LD Processing Algorithms and API specification [<cite><a class="bibref" href="#bib-JSON-LD-API">JSON-LD-API</a></cite>]
         defines a method for <em>flattening</em> a JSON-LD document. Flattening collects
@@ -2962,7 +3091,7 @@ Content-Type: <span class="highlight">application/json</span>
 
     <section class="informative" id="embedding-json-ld-in-html-documents">
       <h3 aria-level="2" role="heading" id="h3_embedding-json-ld-in-html-documents"><span class="secno">6.20 </span>Embedding JSON-LD in HTML Documents</h3>
-      <p><em>This section is non-normative.</em></p>
+      <p><em>Esta seção é não-normativa.</em></p>
 
       <p>HTML script tags can be used to embed blocks of data in documents. This way,
         JSON-LD content can be easily embedded in HTML by placing it in a script
@@ -3618,7 +3747,7 @@ Content-Type: <span class="highlight">application/json</span>
 
     <section class="informative" id="serializing-deserializing-rdf">
       <h3 aria-level="2" role="heading" id="h3_serializing-deserializing-rdf"><span class="secno">9.1 </span>Serializing/Deserializing RDF</h3>
-      <p><em>This section is non-normative.</em></p>
+      <p><em>Esta seção é não-normativa.</em></p>
 
       <p>The process of serializing RDF as JSON-LD and deserializing JSON-LD to RDF
         depends on executing the algorithms defined in
@@ -3698,7 +3827,7 @@ Content-Type: <span class="highlight">application/json</span>
   <section class="appendix informative" id="relationship-to-other-linked-data-formats">
     <!--OddPage-->
     <h2 aria-level="1" role="heading" id="h2_relationship-to-other-linked-data-formats"><span class="secno">A. </span>Relationship to Other Linked Data Formats</h2>
-    <p><em>This section is non-normative.</em></p>
+    <p><em>Esta seção é não-normativa.</em></p>
 
     <p>The JSON-LD examples below demonstrate how JSON-LD can be used to express semantic
       data marked up in other linked data formats such as Turtle, RDFa, Microformats,
@@ -3707,14 +3836,14 @@ Content-Type: <span class="highlight">application/json</span>
 
     <section class="informative" id="turtle">
       <h3 aria-level="2" role="heading" id="h3_turtle"><span class="secno">A.1 </span>Turtle</h3>
-      <p><em>This section is non-normative.</em></p>
+      <p><em>Esta seção é não-normativa.</em></p>
 
       <p>The following are examples of transforming RDF expressed in Turtle [<cite><a class="bibref" href="#bib-TURTLE">TURTLE</a></cite>]
         into JSON-LD.</p>
 
       <section>
         <h4 id="prefix-definitions" aria-level="3" role="heading">Prefix definitions</h4>
-        <p><em>This section is non-normative.</em></p>
+        <p><em>Esta seção é não-normativa.</em></p>
 
         <p>The JSON-LD context has direct equivalents for the Turtle
           <code>@prefix</code> declaration:</p>
@@ -3828,7 +3957,7 @@ Content-Type: <span class="highlight">application/json</span>
 
     <section class="informative" id="rdfa">
       <h3 aria-level="2" role="heading" id="h3_rdfa"><span class="secno">A.2 </span>RDFa</h3>
-      <p><em>This section is non-normative.</em></p>
+      <p><em>Esta seção é não-normativa.</em></p>
 
       <p>The following example describes three people with their respective names and
         homepages in RDFa [<cite><a class="bibref" href="#bib-RDFA-CORE">RDFA-CORE</a></cite>].</p>
@@ -3879,7 +4008,7 @@ Content-Type: <span class="highlight">application/json</span>
 
     <section class="informative" id="microformats">
       <h3 aria-level="2" role="heading" id="h3_microformats"><span class="secno">A.3 </span>Microformats</h3>
-      <p><em>This section is non-normative.</em></p>
+      <p><em>Esta seção é não-normativa.</em></p>
 
       <p>The following example uses a simple Microformats hCard example to express how
         Microformats [<cite><a class="bibref" href="#bib-MICROFORMATS">MICROFORMATS</a></cite>]
@@ -3917,7 +4046,7 @@ Content-Type: <span class="highlight">application/json</span>
 
     <section class="informative" id="microdata">
       <h3 aria-level="2" role="heading" id="h3_microdata"><span class="secno">A.4 </span>Microdata</h3>
-      <p><em>This section is non-normative.</em></p>
+      <p><em>Esta seção é não-normativa.</em></p>
 
       <p>The HTML Microdata [<cite><a class="bibref" href="#bib-MICRODATA">MICRODATA</a></cite>]
         example below expresses book information as a Microdata Work item.</p>
@@ -4078,7 +4207,7 @@ Content-Type: <span class="highlight">application/json</span>
   <section class="appendix informative" id="acknowledgements">
     <!--OddPage-->
     <h2 aria-level="1" role="heading" id="h2_acknowledgements"><span class="secno">C. </span>Acknowledgements</h2>
-    <p><em>This section is non-normative.</em></p>
+    <p><em>Esta seção é não-normativa.</em></p>
 
     <p>The authors would like to extend a deep appreciation and the most sincere thanks
       to Mark Birbeck, who contributed foundational concepts to JSON-LD via his work
